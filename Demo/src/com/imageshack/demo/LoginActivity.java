@@ -37,7 +37,7 @@ public class LoginActivity extends Activity {
 	protected static final String AUTH_OBJECT_EXTRA = "com.imageshack.extra.AUTH_OBJECT";
 	
 	/**
-	 * Get your key at https://imageshack.us/api_request/
+	 * Get your key at https://imageshack.com/contact/api
 	 */
 	private final String API_KEY = null;
 
