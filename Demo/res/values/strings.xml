@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="login_button">Login</string>
+    <string name="username_or_email_hint">Username or Email</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="get_data_button">Test API</string>
+    <string name="auth_token_hint">auth_token:</string>
+    <string name="api_key_hint">api_key:</string>
+    <string name="api_key_hint_value">https://imageshack.com/contact/api</string>
+    <string name="api_selectr">select API</string>
+    <string name="browse_button">Browse</string>
+    
+    <string-array name="api_list">
+        <item>Select API</item>
+        <item>get image</item>
+        <item>get images</item>
+        <item>get activities</item>
+        <item>get settings</item>
+        <item>upload</item>
+        <item>get albums</item>
+        <item>create album</item>
+        <item>delete album</item>
+        <item>get comments</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/missingApiKeyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/api_key_hint" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/authTokenTextView"
+        android:layout_alignBottom="@+id/authTokenTextView"
+        android:layout_alignLeft="@+id/missingApiKeyTextView"
+        android:text="@string/auth_token_hint" />
+
+    <TextView
+        android:id="@+id/authTokenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apiKeyTextView"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:hint="@string/auth_token_hint" />
+
+    <TextView
+        android:id="@+id/apiKeyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/missingApiKeyTextView"
+        android:layout_alignBottom="@+id/missingApiKeyTextView"
+        android:layout_alignLeft="@+id/authTokenTextView"
+        android:hint="@string/api_key_hint_value" />
+
+    <ScrollView
+        android:id="@+id/dataScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/getDataButton"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/getDataButton"
+        android:background="@color/black"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/terminal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:textColor="@color/green" />
+        
+    </ScrollView>
+
+    <Button
+        android:id="@+id/getDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="38dp"
+        android:text="@string/get_data_button" />
+
+    <Spinner
+        android:id="@+id/apiSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/apiKeyTextView"
+        android:entries="@array/api_list"
+        android:prompt="@string/api_selectr" />
+
+    <Button
+        android:id="@+id/browseButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/getDataButton"
+        android:layout_alignTop="@+id/apiSelector"
+        android:layout_toRightOf="@+id/apiSelector"
+        android:minHeight="38dp"
+        android:minWidth="150dp"
+        android:text="@string/browse_button" />
+
+</RelativeLayout>
