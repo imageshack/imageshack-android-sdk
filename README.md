@@ -34,7 +34,8 @@ private final String API_KEY = null;
 ```
 Now you are ready to launch Demo app.
 
-### Example:
+### Example
+This is how you can retrieve a list of images for authenticated user.
 ```java
 // Get an instance of ImageShackClient with your API key and authToken. The
 // authToken is retrieved with login() method. See Demo's LoginActivity.java
