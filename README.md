@@ -7,7 +7,7 @@ ImageShack SDK is a lightweight library for Android. It lets you easily upload a
 
 ### What can you do with SDK
 
-1. Register/login into your ImageShack Account.
+1. Register/login to your ImageShack Account.
 2. Upload/edit/delete images.
 3. Like/unlike/comment/fetch images data.
 4. Create/edit/delete albums.
@@ -22,7 +22,7 @@ ImageShack SDK is a lightweight library for Android. It lets you easily upload a
 3. Go to File -> Import -> Android -> Existing Android Code into Workspace.
 	![ScreenShot](http://imageshack.com/a/img196/3982/ewl4.png)
 5. Hit Browse and navigate to the location from step 1.
-6. Make sure that Demo and ImageShackSDK are check and hit Finish.
+6. Make sure that Demo and ImageShackSDK are checked and hit Finish.
 	![ScreenShot](http://imageshack.com/a/img802/8397/l5a5.png)
 
 There is one more thing needed to run the Demo app.
