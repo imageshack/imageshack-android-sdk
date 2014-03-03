@@ -61,7 +61,24 @@ isClient.getImages(Integer.valueOf(3), null, new ResponseListener() {
 We have built a dynamic image resizer so you can be as creative as you want when it comes to UI. The `ImageModel` has a method `imagizer()` with various parameter sets. For example:
 ```java
 // image is of type ImageModel
-// imagizer(int width, int height, boolean autoCrop)
-image.imagizer(200, 200, true);
+// public String imagizer(int width, int height, boolean autoCrop)
+String url = image.imagizer(200, 200, true);
 ```
 The above code will generate a URL that returns an image with 200x200 resolution. The `autoCrop` parameter tells the imagizer that you want an image of exact `width` and `height`. If `autoCrop == false` image will fit into the box defined by `width` and `height` while preserving the original dimensions. 
+
+You can also apply one of 20 unique filters to your images or convert to grayscale using imagizer.
+```java
+// public String imagizer(int width, int height, boolean autoCrop, int filter)
+String url = image.imagizer(200, 200, true, 21);
+```
+
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f0/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f1/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f2/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f3/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f8/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f17/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f18/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f21/c/827/filx.jpg)
+
+You can use something like [Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader/) to visualize your images.
