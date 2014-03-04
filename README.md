@@ -68,8 +68,8 @@ The above code will generate a URL that returns an image with 200x200 resolution
 
 You can also apply one of 20 unique filters to your images or convert to grayscale using imagizer.
 ```java
-// public String imagizer(int width, int height, boolean autoCrop, int filter)
-String url = image.imagizer(200, 200, true, 21);
+// public String imagizer(int width, int height, boolean autoCrop, int quality, int filter)
+String url = image.imagizer(200, 200, true, 90, 21);
 ```
 
 ![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f0/c/827/filx.jpg)
