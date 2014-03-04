@@ -79,6 +79,7 @@ String url = image.imagizer(200, 200, true, 21);
 ![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f8/c/827/filx.jpg)
 ![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f17/c/827/filx.jpg)
 ![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f18/c/827/filx.jpg)
+![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f11/c/827/filx.jpg)
 ![ScreenShot](http://imagizer.imageshack.us/v2/200x200q90f21/c/827/filx.jpg)
 
 You can use something like [Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader/) to visualize your images.
