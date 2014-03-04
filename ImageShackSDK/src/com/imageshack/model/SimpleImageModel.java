@@ -37,7 +37,7 @@ public class SimpleImageModel extends MiniImageModel {
 			this.id = id;
 		}
 	}
-	
+
 	/**
 	 * Generates direct link
 	 * 
@@ -45,7 +45,8 @@ public class SimpleImageModel extends MiniImageModel {
 	 */
 	public String directLink() {
 		StringBuilder url = new StringBuilder("http://imageshack.com/a/img");
-		url.append(server).append("/").append(bucket).append("/").append(filename);
+		url.append(server).append("/").append(bucket).append("/")
+				.append(filename);
 		return url.toString();
 	}
 
@@ -66,7 +67,7 @@ public class SimpleImageModel extends MiniImageModel {
 	public String imagizer(int width, int height, boolean autoCrop) {
 		StringBuilder url = new StringBuilder(Const.PROTOCOL + Const.IMAGIZER);
 
-		url.append(width).append("x").append(height).append("/");
+		url.append(width).append("x").append(height).append("q90").append("/");
 
 		if (autoCrop) {
 			url.append("c/");
@@ -89,13 +90,25 @@ public class SimpleImageModel extends MiniImageModel {
 	 *            the image height
 	 * @param autoCrop
 	 *            enables auto-crop
-	 * @return url
+	 * @param quality
+	 *            integer between 1 and 100
+	 * @param filter
+	 *            unique image filter
+	 * @return URL String URL
 	 */
-	public String imagizer(int width, int height, boolean autoCrop, int filter) {
+	public String imagizer(int width, int height, boolean autoCrop,
+			int quality, int filter) {
 		StringBuilder url = new StringBuilder(Const.PROTOCOL + Const.IMAGIZER);
 
-		url.append(width).append("x").append(height).append("f").append(filter)
-				.append("/");
+		url.append(width).append("x").append(height);
+
+		if (quality > 0 && quality < 100) {
+			url.append("q").append(quality);
+		} else {
+			url.append("q90");
+		}
+
+		url.append("f").append(filter).append("/");
 
 		if (autoCrop) {
 			url.append("c/");
