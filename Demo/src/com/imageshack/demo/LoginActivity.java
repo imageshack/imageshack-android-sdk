@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
 	/**
 	 * Get your key at https://imageshack.com/contact/api
 	 */
-	private final String API_KEY = null;
+	private final String API_KEY = "UOJ67P2Za52b39c9c0ad3be7bbfe8e2a94d3e4dd";
 
 	// Values for email and password at the time of the login attempt.
 	private String mEmail;
