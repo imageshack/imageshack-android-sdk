@@ -36,12 +36,41 @@ private final String API_KEY = null;
 ```
 Now you are ready to launch Demo app.
 
-### Example
+### Example: upload image to ImageShack
+This is how you can upload an image to ImageShack.
+```java
+// Get an instance of ImageShackClient with your API key and authToken. The
+// authToken is retrieved with login() method. See Demo's LoginActivity.java
+// for more info.
+ImageShackClient isClient = new ImageShackClient(API_KEY, authToken);
+
+// Init parameters
+String[] tags = { "random", "tag", "random tag" };
+String title = "work station";
+String album = "Test album";
+Boolean commentsDisabled = null, isPublic = null;
+String path = "/PATH/TO/FILE"; // See MainActivity for more info
+
+// API call
+isClient.uploadImage(path, tags, album, title, commentsDisabled,
+	isPublic, new ResponseListener() {
+
+		@Override
+		public void onResponse(ImageShackModel model) {
+
+			UploadModel upload = (UploadModel) model;
+			// Visualize results...
+						
+		}
+
+	});
+```
+### Example: get images from ImageShack
 This is how you can retrieve a list of images for authenticated user.
 ```java
 // Get an instance of ImageShackClient with your API key and authToken. The
 // authToken is retrieved with login() method. See Demo's LoginActivity.java
-// for example.
+// for more info.
 ImageShackClient isClient = new ImageShackClient(API_KEY, authToken);
 
 // Call getImages API with limit = 3 and no offset. The response listener 
@@ -52,7 +81,7 @@ isClient.getImages(Integer.valueOf(3), null, new ResponseListener() {
 			public void onResponse(ImageShackModel model) {
 
 				ImagesModel images = (ImagesModel) model;
-				// visualize images...
+				// Visualize images...
 
 			}
 
