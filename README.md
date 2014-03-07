@@ -5,6 +5,8 @@ imageshack-android-sdk
 
 ImageShack SDK is a lightweight library for Android. It lets you easily upload and manage your photos using ImageShack API. The SDK wraps all calls so that the devloper does not have to worry about sending HTTP requests and parsing JSON responses. Instead you will be working with ImageShack models which are just Java objects. 
 
+JavaDoc can be found in ImageShackSDK/doc/index.html
+
 ### What can you do with SDK
 
 1. Register/login to your ImageShack Account.
