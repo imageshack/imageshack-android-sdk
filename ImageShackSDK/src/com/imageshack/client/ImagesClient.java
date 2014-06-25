@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.imageshack.constant.Const;
 import com.imageshack.listener.ResponseListener;
 import com.imageshack.model.ImageModel;
@@ -20,6 +22,7 @@ import com.loopj.android.http.RequestParams;
 
 public class ImagesClient extends ImageShackAbstractClient {
 
+	private static final String TAG = "ImagesClient";
 	private static final String API_ENDPOINT = ROUTE + Const.IMAGES;
 	private String authToken;
 
@@ -124,16 +127,12 @@ public class ImagesClient extends ImageShackAbstractClient {
 	 */
 	public void upload(String imageURI, String[] tags, String album,
 			String title, Boolean commentsDisabled, Boolean isPublic,
-			ResponseListener listener) {
+			ResponseListener listener) throws FileNotFoundException {
 		RequestParams params = new RequestParams();
 		params.put(Const.API_KEY, apiKey);
 		params.put(Const.AUTH_TOKEN, authToken);
 
-		try {
-			params.put("file", new File(imageURI));
-		} catch (FileNotFoundException e) {
-			// this should never happen
-		}
+		params.put("file", new File(imageURI));
 
 		if (tags != null) {
 			StringBuilder tagsCsv = new StringBuilder();
@@ -163,7 +162,7 @@ public class ImagesClient extends ImageShackAbstractClient {
 		if (isPublic != null) {
 			params.put(Const.PUBLIC, isPublic.toString());
 		}
-
+		
 		responseListener = listener;
 		client.post(API_ENDPOINT, params, new UploadImageResponseHandler());
 	}

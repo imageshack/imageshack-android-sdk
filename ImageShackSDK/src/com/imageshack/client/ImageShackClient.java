@@ -1,5 +1,6 @@
 package com.imageshack.client;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import com.imageshack.listener.ResponseListener;
@@ -227,7 +228,7 @@ public class ImageShackClient {
 	 */
 	public void uploadImage(String imageURI, String[] tags, String album,
 			String title, Boolean commentsDisabled, Boolean isPublic,
-			ResponseListener listener) {
+			ResponseListener listener) throws FileNotFoundException {
 		imagesClient.upload(imageURI, tags, album, title, commentsDisabled,
 				isPublic, listener);
 	}

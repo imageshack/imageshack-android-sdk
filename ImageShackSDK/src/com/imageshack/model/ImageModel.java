@@ -269,7 +269,7 @@ public class ImageModel extends BasicImageModel {
 				+ success + ", error=" + error + ", directLink=" + directLink
 				+ ", id=" + id + ", server=" + server + ", bucket=" + bucket
 				+ ", filename=" + filename + ", width=" + width + ", height="
-				+ height + "filesize=" + filesize + ", likes=" + likes
+				+ height + ", filesize=" + filesize + ", likes=" + likes
 				+ ", liked=" + liked + ", creationDate=" + creationDate
 				+ ", isPublic=" + isPublic + ", originalFilename="
 				+ originalFilename + ", title=" + title + ", views=" + views
