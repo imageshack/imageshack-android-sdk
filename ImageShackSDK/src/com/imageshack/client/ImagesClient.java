@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 import com.imageshack.constant.Const;
 import com.imageshack.listener.ResponseListener;
 import com.imageshack.model.ImageModel;
@@ -22,7 +20,6 @@ import com.loopj.android.http.RequestParams;
 
 public class ImagesClient extends ImageShackAbstractClient {
 
-	private static final String TAG = "ImagesClient";
 	private static final String API_ENDPOINT = ROUTE + Const.IMAGES;
 	private String authToken;
 

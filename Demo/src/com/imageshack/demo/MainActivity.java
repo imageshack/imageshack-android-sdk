@@ -1,5 +1,6 @@
 package com.imageshack.demo;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -369,23 +370,28 @@ public class MainActivity extends Activity {
 		Boolean commentsDisabled = null, isPublic = null;
 		String path = getRealPathFromURI(targetUri);
 
-		isClient.uploadImage(path, tags, album, title, commentsDisabled,
-				isPublic, new ResponseListener() {
+		try {
+			isClient.uploadImage(path, tags, album, title, commentsDisabled,
+					isPublic, new ResponseListener() {
 
-					@Override
-					public void onResponse(ImageShackModel model) {
+						@Override
+						public void onResponse(ImageShackModel model) {
 
-						UploadModel upload = (UploadModel) model;
+							UploadModel upload = (UploadModel) model;
 
-						if (upload != null) {
-							terminal.setText(formatObjectString(upload
-									.toString()));
+							if (upload != null) {
+								terminal.setText(formatObjectString(upload
+										.toString()));
+							}
+
+							getDataButton.setEnabled(true);
 						}
 
-						getDataButton.setEnabled(true);
-					}
-
-				});
+					});
+		} catch (FileNotFoundException e) {
+			terminal.setText("File not found!");
+			getDataButton.setEnabled(true);
+		}
 
 	}
 
